@@ -1,0 +1,31 @@
+.navbar {
+  background-color: var(--page-element);
+  /* Fix shadow varible */
+  box-shadow: 0 2px 2px hsl(0, 0%, 15%);
+  padding: 3em 1em;
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 1em;
+}
+
+.theme-toggle-container {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.theme-toggle-text {
+  font-weight: 600;
+}
+
+@media (min-width: 40rem) {
+  .navbar {
+    padding: 2em 4em;
+  }
+  .nav-title {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+}

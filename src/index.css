@@ -13,13 +13,13 @@
 }
 
 [data-theme="dark"] {
-  --main-element: hsl(209, 23%, 22%);
+  --page-element: hsl(209, 23%, 22%);
   --main-background: hsl(207, 26%, 17%);
   --font-colour: hsl(0, 0%, 100%);
 }
 
 [data-theme="light"] {
-  --main-element: hsl(0, 0%, 100%);
+  --page-element: hsl(0, 0%, 100%);
   --main-background: hsl(0, 0%, 98%);
   --font-colour: hsl(200, 15%, 8%);
   --light-mode-input: hsl(0, 0%, 52%);
@@ -28,5 +28,4 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Nunito Sans", sans-serif;
 }

@@ -1,3 +1,9 @@
 .App {
-  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--font-colour);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  background-color: var(--main-background);
+  min-height: 100vh;
 }
