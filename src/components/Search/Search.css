@@ -1,0 +1,32 @@
+.search-container {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.magnifying-glass {
+  width: 1.5em;
+  position: absolute;
+  left: 2em;
+  transform: translateY(1.75em);
+  filter: invert(100%) sepia(54%) saturate(2%) hue-rotate(320deg)
+    brightness(110%) contrast(100%);
+}
+
+.search-box {
+  border: none;
+  border-radius: 5px;
+  padding: 2em;
+  color: aliceblue;
+  text-align: right;
+  background-color: var(--page-element);
+}
+.search-box:focus {
+  outline: none;
+}
+.search-box::placeholder {
+  text-align: left;
+  padding-left: 3em;
+  color: var(--font-colour);
+}

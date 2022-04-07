@@ -1,3 +1,12 @@
+import { Fragment } from "react";
+import Search from "./Search/Search";
+import Countries from "./Countries/Countries";
+
 export default function Main() {
-  return <div>Main</div>;
+  return (
+    <Fragment>
+      <Search />
+      <Countries />
+    </Fragment>
+  );
 }

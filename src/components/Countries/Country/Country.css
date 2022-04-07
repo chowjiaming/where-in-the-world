@@ -1,0 +1,24 @@
+.country-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 4em;
+  border-radius: 5px;
+  background-color: var(--page-element);
+}
+
+.country-flag {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.country-facts-container {
+  padding: 2em;
+}
+
+.country-name {
+  padding-bottom: 1em;
+}
+
+.country-fact-heading {
+  font-weight: 600;
+}

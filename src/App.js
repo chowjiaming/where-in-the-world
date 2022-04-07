@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
+import { CountriesProvider } from "./helpers/context/countriesContext";
 import ThemeContext from "./helpers/context/themeContext";
 import Navbar from "./components/Navbar/Navbar";
 import Main from "./components/Main";
@@ -11,10 +12,12 @@ function App() {
   return (
     <div className="App" data-theme={theme.option}>
       <Navbar />
-      <Routes>
-        <Route path={"/"} element={<Main />} />
-        <Route path={"/detail"} element={<Detail />} />
-      </Routes>
+      <CountriesProvider>
+        <Routes>
+          <Route path={"/"} element={<Main />} />
+          <Route path={"/detail"} element={<Detail />} />
+        </Routes>
+      </CountriesProvider>
     </div>
   );
 }
