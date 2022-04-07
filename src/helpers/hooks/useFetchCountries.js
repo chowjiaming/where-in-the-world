@@ -24,7 +24,7 @@ function reducer(state, action) {
   }
 }
 
-export default function useFetchCountries(suffix) {
+export default function useFetchCountries(searchTerm) {
   const [state, dispatch] = useReducer(reducer, {
     countries: [],
     isLoading: true,
@@ -33,7 +33,7 @@ export default function useFetchCountries(suffix) {
   useEffect(() => {
     const fetchNewCountries = () => {
       dispatch({ type: ACTIONS.MAKE_REQUEST });
-      fetch(URL + suffix)
+      fetch(URL + searchTerm)
         .then((res) => res.json())
         .then((data) => {
           dispatch({
@@ -46,6 +46,6 @@ export default function useFetchCountries(suffix) {
         });
     };
     fetchNewCountries();
-  }, [suffix]);
+  }, [searchTerm]);
   return state;
 }

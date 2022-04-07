@@ -1,4 +1,5 @@
 .country-container {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   margin: 0 4em;

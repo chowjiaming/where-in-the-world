@@ -15,7 +15,7 @@ function App() {
       <CountriesProvider>
         <Routes>
           <Route path={"/"} element={<Main />} />
-          <Route path={"/detail"} element={<Detail />} />
+          <Route path={"/detail/:countryId"} element={<Detail />} />
         </Routes>
       </CountriesProvider>
     </div>
