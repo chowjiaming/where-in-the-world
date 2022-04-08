@@ -1,5 +1,6 @@
 .back-button {
   border: none;
+  cursor: pointer;
   padding: 0.4em 1.8em;
   border-radius: 2px;
   color: var(--font-color);
