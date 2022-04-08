@@ -6,8 +6,8 @@ const CountriesContext = createContext();
 
 export const CountriesProvider = ({ children }) => {
   const [searchCountry, setSearchCountry] = useState("all");
-
   const navigate = useNavigate();
+  
   const handleCountryClick = (e) => {
     const country = e.target.id.toLowerCase();
     navigate(`detail/${country}`);

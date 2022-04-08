@@ -4,9 +4,3 @@
   gap: 1em;
   grid-template-columns: repeat(3, 1fr);
 }
-
-.border-country-button {
-  text-align: center;
-  padding: 0.3em 0;
-  background-color: var(--page-element);
-}
