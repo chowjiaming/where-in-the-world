@@ -81,7 +81,7 @@ export default function Detail() {
           {countries[0].borders ? (
             <Borders borders={countries[0].borders} />
           ) : (
-            <p>No bordering Countries</p>
+            <h3 className="border-countries-title">No bordering Countries</h3>
           )}
         </div>
       </div>

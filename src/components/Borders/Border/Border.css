@@ -3,6 +3,10 @@
   text-align: center;
   padding: 0.3em 0;
   background-color: var(--page-element);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8em;
 }
 
 @media (min-width: 90rem) {

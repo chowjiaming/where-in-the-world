@@ -1,39 +1,48 @@
-import { createContext } from "react";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import useFetchCountries from "../hooks/useFetchCountries";
 
 const CountriesContext = createContext();
 
 export const CountriesProvider = ({ children }) => {
   const [searchCountry, setSearchCountry] = useState({
     term: "",
-    searching: false,
+    default: "all",
   });
-  // const { countries, isLoading, error } = useFetchCountries(searchCountry);
 
   const navigate = useNavigate();
 
   const handleCountryClick = (e) => {
-    const country = e.target.id.toLowerCase();
+    const country = e.currentTarget.id.toLowerCase();
     navigate(`detail/${country}`);
   };
 
+  const handleHomeClick = () => {
+    navigate("/");
+  };
+
   const handleSearch = (e) => {
-    console.log(e.target.value);
-    // setSearchCountry();
+    const value = e.target.value;
+    if (!value) {
+      setSearchCountry({
+        term: value,
+        default: "all",
+      });
+    } else {
+      setSearchCountry({
+        term: value,
+        default: "",
+      });
+    }
   };
 
   return (
     <CountriesContext.Provider
       value={{
         setSearchCountry,
-        handleCountryClick,
         searchCountry,
         handleSearch,
-        // countries,
-        // isLoading,
-        // error,
+        handleCountryClick,
+        handleHomeClick,
       }}
     >
       {children}

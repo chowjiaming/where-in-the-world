@@ -11,8 +11,8 @@ function App() {
   const { theme } = useContext(ThemeContext);
   return (
     <div className="App" data-theme={theme.option}>
-      <Navbar />
       <CountriesProvider>
+        <Navbar />
         <Routes>
           <Route path={"/"} element={<Home />} />
           <Route path={"/detail/:countryId"} element={<Detail />} />

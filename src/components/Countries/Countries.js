@@ -1,12 +1,17 @@
+import { useContext } from "react";
+import CountriesContext from "../../context/countriesContext";
 import useFetchCountries from "../../hooks/useFetchCountries";
 import Country from "./Country/Country";
 import "./Countries.css";
 
 export default function Countries() {
-  const { countries, isLoading, error } = useFetchCountries("all");
+  const { searchCountry } = useContext(CountriesContext);
+  const { countries, isLoading, error } = useFetchCountries(
+    searchCountry.default ? searchCountry.default : `name/${searchCountry.term}`
+  );
 
   const mainContent = error ? (
-    <h1>{error}</h1>
+    <h1>{error.message}</h1>
   ) : isLoading ? (
     <h1>Loading...</h1>
   ) : (
@@ -15,9 +20,5 @@ export default function Countries() {
     })
   );
 
-  return (
-    <div className="results-container">
-      {mainContent}
-    </div>
-  );
+  return <div className="results-container">{mainContent}</div>;
 }

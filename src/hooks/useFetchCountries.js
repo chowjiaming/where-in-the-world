@@ -16,7 +16,7 @@ function reducer(state, action) {
     case ACTIONS.ERROR:
       return {
         isLoading: false,
-        error: action.payload.error,
+        error: action.payload,
         countries: [],
       };
     default:
@@ -36,13 +36,17 @@ export default function useFetchCountries(searchTerm) {
       fetch(URL + searchTerm)
         .then((res) => res.json())
         .then((data) => {
-          dispatch({
-            type: ACTIONS.GET_DATA,
-            payload: data,
-          });
+          if (data.status === 404) {
+            dispatch({ type: ACTIONS.ERROR, payload: data });
+          } else {
+            dispatch({
+              type: ACTIONS.GET_DATA,
+              payload: data,
+            });
+          }
         })
         .catch((error) => {
-          dispatch({ type: ACTIONS.ERROR, payload: { error } });
+          dispatch({ type: ACTIONS.ERROR, payload: error });
         });
     };
     fetchNewCountries();

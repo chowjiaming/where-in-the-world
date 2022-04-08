@@ -8,22 +8,18 @@ export default function Country(props) {
   const { handleCountryClick } = useContext(CountriesContext);
 
   return (
-    <div className="country-container">
+    <div
+      className="country-container"
+      id={country.name.common}
+      onClick={handleCountryClick}
+    >
       <img
         className="country-flag"
         src={country.flags.svg}
         alt={`${country.name.common} Flag`}
-        id={country.name.common}
-        onClick={handleCountryClick}
       />
       <div className="country-facts-container">
-        <h2
-          className="country-name"
-          id={country.name.common}
-          onClick={handleCountryClick}
-        >
-          {country.name.common}
-        </h2>
+        <h2 className="country-name">{country.name.common}</h2>
         <p className="country-fact">
           <span className="country-fact-heading">Population: </span>
           {addCommas(country.population)}
