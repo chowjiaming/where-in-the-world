@@ -1,3 +1,24 @@
+.back-button {
+  border: none;
+  padding: 0.4em 1.8em;
+  border-radius: 2px;
+  color: var(--font-color);
+  background-color: var(--page-element);
+  box-shadow: 0 0 15px var(--page-element-shadow);
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+.left-arrow {
+  width: 1.5em;
+  filter: invert(100%) sepia(2%) saturate(0%) hue-rotate(221deg)
+    brightness(105%) contrast(103%);
+}
+
+.country-flag-detail {
+  margin-top: 4em;
+}
+
 .country-detail-container {
   padding: 2em;
 }
@@ -8,4 +29,47 @@
 
 .country-name-detail {
   padding: 1em 0;
+}
+
+.details-facts-container {
+  margin-bottom: 2em;
+}
+
+.country-fact-detail {
+  padding-bottom: 1em;
+}
+
+.detail-fact-heading {
+  font-weight: 600;
+}
+
+@media (min-width: 45rem) {
+  .country-detail-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5em;
+  }
+  .back-button {
+    border-radius: 5px;
+    padding: 0.8em 1em 0.8em 0;
+    width: 9em;
+    justify-content: center;
+  }
+  .flag-detail-container {
+    display: flex;
+    gap: 10em;
+  }
+  .country-flag-detail {
+    max-width: 50em;
+  }
+  .facts-detail-container {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .details-content-container {
+    display: flex;
+    gap: 5em;
+  }
 }

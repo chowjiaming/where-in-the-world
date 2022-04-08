@@ -1,13 +1,11 @@
 import { createContext } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useFetchCountries from "../hooks/useFetchCountries";
 
 const CountriesContext = createContext();
 
 export const CountriesProvider = ({ children }) => {
   const [searchCountry, setSearchCountry] = useState("all");
-  const { countries, isLoading, error } = useFetchCountries(searchCountry);
 
   const navigate = useNavigate();
   const handleCountryClick = (e) => {
@@ -20,9 +18,7 @@ export const CountriesProvider = ({ children }) => {
       value={{
         setSearchCountry,
         handleCountryClick,
-        countries,
-        isLoading,
-        error,
+        searchCountry
       }}
     >
       {children}

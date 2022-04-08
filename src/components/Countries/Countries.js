@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import CountriesContext from "../../helpers/context/countriesContext";
+import useFetchCountries from "../../helpers/hooks/useFetchCountries";
 import Country from "./Country/Country";
 import "./Countries.css";
 
 export default function Countries() {
-  const { countries, isLoading, error } = useContext(CountriesContext);
+  const { countries, isLoading, error } = useFetchCountries("all");
+
   const mainContent = error ? (
     <h1>{error}</h1>
   ) : isLoading ? (
