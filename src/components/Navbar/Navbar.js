@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ThemeContext from "../../helpers/context/themeContext";
+import ThemeContext from "../../context/themeContext";
 import "./Navbar.css";
 
 export default function Navbar() {

@@ -1,4 +1,4 @@
-import useFetchCountries from "../../helpers/hooks/useFetchCountries";
+import useFetchCountries from "../../hooks/useFetchCountries";
 import Country from "./Country/Country";
 import "./Countries.css";
 

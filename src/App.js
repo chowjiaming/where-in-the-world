@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import { CountriesProvider } from "./helpers/context/countriesContext";
-import ThemeContext from "./helpers/context/themeContext";
+import { CountriesProvider } from "./context/countriesContext";
+import ThemeContext from "./context/themeContext";
 import Navbar from "./components/Navbar/Navbar";
-import Main from "./components/Main";
-import Detail from "./components/Detail/Detail";
+import Home from "./pages/Home/Home";
+import Detail from "./pages/Details/Details";
 import "./App.css";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <CountriesProvider>
         <Routes>
-          <Route path={"/"} element={<Main />} />
+          <Route path={"/"} element={<Home />} />
           <Route path={"/detail/:countryId"} element={<Detail />} />
         </Routes>
       </CountriesProvider>

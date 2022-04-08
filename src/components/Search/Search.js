@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import CountriesContext from "../../helpers/context/countriesContext";
+import CountriesContext from "../../context/countriesContext";
 // import Filter from "./Filter/Filter";
 import "./Search.css";
 

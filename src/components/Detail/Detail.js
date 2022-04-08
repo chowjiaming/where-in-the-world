@@ -1,8 +1,9 @@
 import { Fragment } from "react";
-import useFetchCountries from "../../helpers/hooks/useFetchCountries";
+import useFetchCountries from "../../hooks/useFetchCountries";
 import { useParams, useNavigate } from "react-router-dom";
 import { addCommas } from "../../helpers/helperFunctions";
-import Borders from "./Borders/Borders";
+
+import Borders from "../../components/Borders/Borders";
 import "./Detail.css";
 
 export default function Detail() {
@@ -27,57 +28,56 @@ export default function Detail() {
         />
         Back
       </button>
-      <div className="flag-detail-container">
+      <div className="main-detail-container">
         <img
-          className="country-flag-detail"
+          className="large-country-flag"
           src={countries[0].flags.svg}
           alt={`${countries[0].name.common} Flag`}
         />
-        <div className="facts-detail-container">
-          <h2 className="country-name-detail">{countries[0].name.common}</h2>
+        <div className="details-container">
+          <h2 className="country-name-heading">{countries[0].name.common}</h2>
           <div className="details-content-container">
-            <div className="details-facts-container">
-              <p className="country-fact-detail">
-                <span className="detail-fact-heading">Native Name: </span>
+            <div className="detail-box">
+              <p className="fact-detail">
+                <span className="fact-detail-heading">Native Name: </span>
                 {Object.values(countries[0].name.nativeName)[0].official}
               </p>
-              <p className="country-fact-detail">
-                <span className="detail-fact-heading">Population: </span>
+              <p className="fact-detail">
+                <span className="fact-detail-heading">Population: </span>
                 {addCommas(countries[0].population)}
               </p>
-              <p className="country-fact-detail">
-                <span className="detail-fact-heading">Region: </span>
+              <p className="fact-detail">
+                <span className="fact-detail-heading">Region: </span>
                 {countries[0].region}
               </p>
-              <p className="country-fact-detail">
-                <span className="detail-fact-heading">Sub Region: </span>
+              <p className="fact-detail">
+                <span className="fact-detail-heading">Sub Region: </span>
                 {countries[0].subregion}
               </p>
-              <p className="country-fact-detail">
-                <span className="detail-fact-heading">Capital: </span>
+              <p className="fact-detail">
+                <span className="fact-detail-heading">Capital: </span>
                 {countries[0].capital}
               </p>
             </div>
-            <div className="details-facts-container">
-              <p className="country-fact-detail">
-                <span className="detail-fact-heading">Top Level Domain: </span>
+            <div className="detail-box">
+              <p className="fact-detail">
+                <span className="fact-detail-heading">Top Level Domain: </span>
                 {countries[0].tld[0]}
               </p>
-              <p className="country-fact-detail">
-                <span className="detail-fact-heading">Currencies: </span>
+              <p className="fact-detail">
+                <span className="fact-detail-heading">Currencies: </span>
                 {Object.values(countries[0].currencies)[0].name.replace(
                   /(^\w{1})|(\s+\w{1})/g,
                   (letter) => letter.toUpperCase()
                 )}
               </p>
-              <p className="country-fact-detail">
-                <span className="detail-fact-heading">Language: </span>
+              <p className="fact-detail">
+                <span className="fact-detail-heading">Language: </span>
                 {Object.values(countries[0].languages)[0]}
               </p>
             </div>
           </div>
 
-          <h3 className="border-countries-title">Border Countries:</h3>
           {countries[0].borders ? (
             <Borders borders={countries[0].borders} />
           ) : (
@@ -88,7 +88,5 @@ export default function Detail() {
     </Fragment>
   );
 
-  return (
-    <section className="country-detail-container">{detailContent}</section>
-  );
+  return <Fragment>{detailContent}</Fragment>;
 }

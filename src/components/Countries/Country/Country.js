@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import CountriesContext from "../../../helpers/context/countriesContext";
+import CountriesContext from "../../../context/countriesContext";
 import { addCommas } from "../../../helpers/helperFunctions";
 import "./Country.css";
 

@@ -4,3 +4,9 @@
   padding: 0.3em 0;
   background-color: var(--page-element);
 }
+
+@media (min-width: 90rem) {
+  .border-country-button {
+    padding: 0.3em 1em;
+  }
+}

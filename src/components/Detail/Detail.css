@@ -16,54 +16,42 @@
     brightness(105%) contrast(103%);
 }
 
-.country-flag-detail {
+.large-country-flag {
   margin-top: 4em;
-}
-
-.country-detail-container {
-  padding: 2em;
-}
-
-.country-flag-detail {
   width: 100%;
 }
 
-.country-name-detail {
+.country-name-heading {
   padding: 1em 0;
 }
 
-.details-facts-container {
+.detail-box {
   margin-bottom: 2em;
 }
 
-.country-fact-detail {
+.fact-detail {
   padding-bottom: 1em;
 }
 
-.detail-fact-heading {
+.fact-detail-heading {
   font-weight: 600;
 }
 
-@media (min-width: 45rem) {
-  .country-detail-container {
-    display: flex;
-    flex-direction: column;
-    padding: 5em;
-  }
+@media (min-width: 90rem) {
   .back-button {
     border-radius: 5px;
     padding: 0.8em 1em 0.8em 0;
     width: 9em;
     justify-content: center;
   }
-  .flag-detail-container {
+  .main-detail-container {
     display: flex;
     gap: 10em;
   }
-  .country-flag-detail {
+  .large-country-flag {
     max-width: 50em;
   }
-  .facts-detail-container {
+  .details-container {
     flex-basis: 50%;
     display: flex;
     flex-direction: column;

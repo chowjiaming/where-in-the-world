@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import CountriesContext from "../../../../helpers/context/countriesContext";
-import useFetchCountries from "../../../../helpers/hooks/useFetchCountries";
+import CountriesContext from "../../../context/countriesContext";
+import useFetchCountries from "../../../hooks/useFetchCountries";
 import "./Border.css";
 
 export default function Border(props) {
