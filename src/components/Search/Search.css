@@ -1,9 +1,15 @@
 .search-container {
-  margin: 1em;
   display: flex;
   flex-direction: column;
   position: relative;
   max-width: 40em;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 45rem) {
+  .search-container {
+    margin-bottom: 4em;
+  }
 }
 
 .magnifying-glass {

@@ -1,12 +1,12 @@
-import { Fragment } from "react";
 import Search from "./Search/Search";
 import Countries from "./Countries/Countries";
+import "./Main.css"
 
 export default function Main() {
   return (
-    <Fragment>
+    <section className="main-content-container">
       <Search />
       <Countries />
-    </Fragment>
+    </section>
   );
 }

@@ -6,14 +6,14 @@
 
 @media (min-width: 45rem) {
   .results-container {
-    padding: 0 4em;
     grid-template-columns: repeat(2, 1fr);
+    gap: 4em;
   }
 }
 
 @media (min-width: 110rem) {
   .results-container {
-    padding: 0 4em;
     grid-template-columns: repeat(4, 1fr);
+    gap: 6em;
   }
 }

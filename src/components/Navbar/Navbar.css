@@ -13,6 +13,12 @@
 .theme-toggle-container {
   cursor: pointer;
   margin-left: auto;
+  display: flex;
+  gap: 0.5em;
+}
+
+.theme-icon {
+  width: 1em;
 }
 
 .theme-toggle-text {

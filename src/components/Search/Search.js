@@ -7,7 +7,7 @@ export default function Search() {
   const { searchCountry, handleSearch } = useContext(CountriesContext);
 
   return (
-    <section className="search-container">
+    <div className="search-container">
       <img
         className="magnifying-glass"
         src="images/search.svg"
@@ -20,6 +20,6 @@ export default function Search() {
         placeholder="Search for a country..."
       />
       {/* <Filter /> */}
-    </section>
+    </div>
   );
 }
