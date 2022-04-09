@@ -38,7 +38,7 @@
   border: none;
   border-radius: 5px;
   padding: 2em;
-  color: aliceblue;
+  color: var(--font-colour);
   text-align: right;
   background-color: var(--page-element);
   width: 100%;
