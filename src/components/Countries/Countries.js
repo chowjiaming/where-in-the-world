@@ -1,13 +1,19 @@
 import { useContext } from "react";
 import CountriesContext from "../../context/countriesContext";
 import useFetchCountries from "../../hooks/useFetchCountries";
+import { regionList } from "../../config/countryRegions";
 import Country from "./Country/Country";
 import "./Countries.css";
 
 export default function Countries() {
-  const { searchCountry } = useContext(CountriesContext);
+  const { countrySearchData } = useContext(CountriesContext);
+  console.log(countrySearchData);
   const { countries, isLoading, error } = useFetchCountries(
-    searchCountry.default ? searchCountry.default : `name/${searchCountry.term}`
+    countrySearchData.region !== 0
+      ? `region/${regionList[countrySearchData.region]}`
+      : countrySearchData.term !== ""
+      ? `name/${countrySearchData.term}`
+      : countrySearchData.default
   );
 
   const mainContent = error ? (

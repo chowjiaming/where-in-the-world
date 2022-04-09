@@ -1,9 +1,16 @@
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .search-container {
   display: flex;
-  flex-direction: column;
   position: relative;
-  max-width: 40em;
   margin-bottom: 2em;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 35%;
 }
 
 @media (min-width: 45rem) {
@@ -28,6 +35,7 @@
   color: aliceblue;
   text-align: right;
   background-color: var(--page-element);
+  width: 100%;
 }
 .search-box:focus {
   outline: none;
