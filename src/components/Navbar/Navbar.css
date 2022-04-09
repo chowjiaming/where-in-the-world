@@ -1,6 +1,6 @@
 .navbar {
   background-color: var(--page-element);
-  box-shadow: 0 2px 2px var(--page-element-shadow);
+  box-shadow: 0 2px 10px -2px var(--page-element-shadow);
   padding: 3em 1em;
   display: flex;
   align-items: center;

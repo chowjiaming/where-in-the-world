@@ -1,19 +1,21 @@
 .input-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
 }
 
 .search-container {
-  display: flex;
   position: relative;
   margin-bottom: 2em;
-  flex-grow: 0;
-  flex-shrink: 0;
   flex-basis: 35%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 var(--page-element-shadow);
 }
 
 @media (min-width: 45rem) {
+  .input-container {
+    flex-direction: row;
+  }
   .search-container {
     margin-bottom: 4em;
   }
@@ -26,6 +28,10 @@
   transform: translateY(1.75em);
   filter: invert(100%) sepia(54%) saturate(2%) hue-rotate(320deg)
     brightness(110%) contrast(100%);
+}
+.magnifying-glass.light {
+  filter: invert(0%) sepia(0%) saturate(2%) hue-rotate(278deg) brightness(104%)
+    contrast(100%);
 }
 
 .search-box {

@@ -1,12 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import useFetchCountries from "../../hooks/useFetchCountries";
 import { useParams, useNavigate } from "react-router-dom";
 import { addCommas } from "../../helpers/helperFunctions";
-
+import ThemeContext from "../../context/themeContext";
 import Borders from "../../components/Borders/Borders";
 import "./Detail.css";
 
 export default function Detail() {
+  const { theme } = useContext(ThemeContext);
   const params = useParams();
   const navigate = useNavigate();
   const { countryId } = params;
@@ -22,7 +23,7 @@ export default function Detail() {
     <Fragment>
       <button className="back-button" onClick={() => navigate(-1)}>
         <img
-          className="left-arrow"
+          className={`left-arrow ${theme.option === "light" ? "light" : ""}`}
           src="/images/left-arrow.svg"
           alt="left-arrow"
         />

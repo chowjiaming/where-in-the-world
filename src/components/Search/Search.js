@@ -1,16 +1,20 @@
 import { useContext } from "react";
 import CountriesContext from "../../context/countriesContext";
+import ThemeContext from "../../context/themeContext";
 import Filter from "./Filter/Filter";
 import "./Search.css";
 
 export default function Search() {
   const { countrySearchData, handleSearch } = useContext(CountriesContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <section className="input-container">
+    <div className="input-container">
       <div className="search-container">
         <img
-          className="magnifying-glass"
+          className={`magnifying-glass ${
+            theme.option === "light" ? "light" : ""
+          }`}
           src="images/search.svg"
           alt="magnifying-glass"
         />
@@ -22,6 +26,6 @@ export default function Search() {
         />
       </div>
       <Filter />
-    </section>
+    </div>
   );
 }

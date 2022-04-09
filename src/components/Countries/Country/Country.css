@@ -4,6 +4,7 @@
   flex-direction: column;
   border-radius: 5px;
   background-color: var(--page-element);
+  box-shadow: 0 0 10px 0 var(--page-element-shadow);
 }
 
 .country-flag {

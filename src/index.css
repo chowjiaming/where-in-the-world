@@ -14,13 +14,14 @@
 
 [data-theme="dark"] {
   --page-element: hsl(209, 23%, 22%);
-  --page-element-shadow: hsl(209, 23%, 14%);
+  --page-element-shadow: #1a232c;
   --main-background: hsl(207, 26%, 17%);
   --font-colour: hsl(0, 0%, 100%);
 }
 
 [data-theme="light"] {
   --page-element: hsl(0, 0%, 100%);
+  --page-element-shadow: #D3D3D3;
   --main-background: hsl(0, 0%, 98%);
   --font-colour: hsl(200, 15%, 8%);
   --light-mode-input: hsl(0, 0%, 52%);

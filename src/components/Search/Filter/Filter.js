@@ -1,5 +1,6 @@
 import { useContext, useRef } from "react";
 import CountriesContext from "../../../context/countriesContext";
+import ThemeContext from "../../../context/themeContext";
 import { regionList } from "../../../config/countryRegions";
 import "./Filter.css";
 
@@ -13,6 +14,7 @@ export default function Filter() {
     setCountrySearchData,
     useHandleClickOutside,
   } = useContext(CountriesContext);
+  const { theme } = useContext(ThemeContext);
 
   const dropdownRef = useRef(null);
   useHandleClickOutside(dropdownRef);
@@ -72,7 +74,7 @@ export default function Filter() {
         onKeyDown={handleListKeyDown}
       >
         <img
-          className="chevron-down"
+          className={`chevron-down ${theme.option === "light" ? "light" : ""}`}
           src="images/chevron-down.svg"
           alt="chevron-down"
         />
