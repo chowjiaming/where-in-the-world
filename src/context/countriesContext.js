@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const CountriesContext = createContext();
@@ -24,6 +24,19 @@ export const CountriesProvider = ({ children }) => {
       region: index,
     });
     setDropdownOpen(false);
+  };
+
+  const useHandleClickOutside = (ref) => {
+    useEffect(() => {
+      const handleClickOutside = (e) => {
+        if (ref.current && !ref.current.contains(e.target))
+          setDropdownOpen(false);
+      };
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
   };
 
   const handleSearch = (e) => {
@@ -64,6 +77,7 @@ export const CountriesProvider = ({ children }) => {
         handleSearch,
         handleCountryClick,
         handleHomeClick,
+        useHandleClickOutside,
       }}
     >
       {children}

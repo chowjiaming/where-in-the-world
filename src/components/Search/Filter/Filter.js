@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import CountriesContext from "../../../context/countriesContext";
 import { regionList } from "../../../config/countryRegions";
 import "./Filter.css";
@@ -11,7 +11,11 @@ export default function Filter() {
     handleRegionSelect,
     countrySearchData,
     setCountrySearchData,
+    useHandleClickOutside,
   } = useContext(CountriesContext);
+
+  const dropdownRef = useRef(null);
+  useHandleClickOutside(dropdownRef);
 
   const handleKeyDown = (index) => (e) => {
     switch (e.key) {
@@ -58,7 +62,7 @@ export default function Filter() {
   };
 
   return (
-    <div className="dropdown-container">
+    <div className="dropdown-container" ref={dropdownRef}>
       <button
         type="button"
         aria-haspopup="listbox"

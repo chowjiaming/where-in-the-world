@@ -7,7 +7,6 @@ import "./Countries.css";
 
 export default function Countries() {
   const { countrySearchData } = useContext(CountriesContext);
-  console.log(countrySearchData);
   const { countries, isLoading, error } = useFetchCountries(
     countrySearchData.region !== 0
       ? `region/${regionList[countrySearchData.region]}`
