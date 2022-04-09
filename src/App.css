@@ -6,4 +6,6 @@
   letter-spacing: 0.05em;
   background-color: var(--main-background);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

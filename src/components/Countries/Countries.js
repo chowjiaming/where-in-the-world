@@ -25,5 +25,5 @@ export default function Countries() {
     })
   );
 
-  return <div className="results-container">{mainContent}</div>;
+  return <div className="container__results">{mainContent}</div>;
 }

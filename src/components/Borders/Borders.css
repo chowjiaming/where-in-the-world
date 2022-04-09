@@ -1,9 +1,9 @@
-.borders-container {
+.container__boders{
   display: flex;
   flex-direction: column;
 }
 
-.border-box {
+.box__border {
   margin-top: 1em;
   display: grid;
   gap: 1em;
@@ -11,12 +11,12 @@
 }
 
 @media (min-width: 90rem) {
-  .borders-container {
+  .container__boders{
     flex-direction: row;
     gap: 2em;
     align-items: center;
   }
-  .border-box {
+  .box__border {
     margin: 0;
   }
 }

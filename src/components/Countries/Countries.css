@@ -1,18 +1,18 @@
-.results-container {
+.container__results {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2em;
 }
 
 @media (min-width: 45rem) {
-  .results-container {
+  .container__results {
     grid-template-columns: repeat(2, 1fr);
     gap: 4em;
   }
 }
 
 @media (min-width: 110rem) {
-  .results-container {
+  .container__results {
     grid-template-columns: repeat(4, 1fr);
     gap: 6em;
   }

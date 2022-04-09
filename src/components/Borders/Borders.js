@@ -8,8 +8,8 @@ export default function Borders(props) {
   });
   return (
     <div className="borders-container">
-      <h3 className="border-countries-title">Border Countries:</h3>
-      <div className="border-box">{borderContent}</div>
+      <h3 className="border__title">Border Countries:</h3>
+      <div className="box__border">{borderContent}</div>
     </div>
   );
 }

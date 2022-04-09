@@ -1,4 +1,4 @@
-.country-container {
+.container__country {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -7,19 +7,19 @@
   box-shadow: 0 0 10px 0 var(--page-element-shadow);
 }
 
-.country-flag {
+.country__flag {
   width: 100%;
   border-radius: 5px 5px 0 0;
 }
 
-.country-facts-container {
+.container__country--facts {
   padding: 2em;
 }
 
-.country-name {
+.country__name {
   padding-bottom: 1em;
 }
 
-.country-fact-heading {
+.country__fact--heading {
   font-weight: 600;
 }

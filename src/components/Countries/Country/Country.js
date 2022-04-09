@@ -9,27 +9,27 @@ export default function Country(props) {
 
   return (
     <div
-      className="country-container"
+      className="container__country"
       id={country.name.common}
       onClick={handleCountryClick}
     >
       <img
-        className="country-flag"
+        className="country__flag"
         src={country.flags.svg}
         alt={`${country.name.common} Flag`}
       />
-      <div className="country-facts-container">
-        <h2 className="country-name">{country.name.common}</h2>
-        <p className="country-fact">
-          <span className="country-fact-heading">Population: </span>
+      <div className="container__country--facts">
+        <h2 className="country__name">{country.name.common}</h2>
+        <p className="country__fact">
+          <span className="country__fact--heading">Population: </span>
           {addCommas(country.population)}
         </p>
-        <p className="country-fact">
-          <span className="country-fact-heading">Region: </span>
+        <p className="country__fact">
+          <span className="country__fact--heading">Region: </span>
           {country.region}
         </p>
-        <p className="country-fact">
-          <span className="country-fact-heading">Capital: </span>
+        <p className="country__fact">
+          <span className="country__fact--heading">Capital: </span>
           {country.capital}
         </p>
       </div>

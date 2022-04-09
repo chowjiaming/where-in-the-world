@@ -1,4 +1,4 @@
-.border-country-button {
+.button__border {
   cursor: pointer;
   text-align: center;
   padding: 0.3em 0;
@@ -11,7 +11,7 @@
 }
 
 @media (min-width: 90rem) {
-  .border-country-button {
+  .button__border {
     padding: 0.3em 1em;
   }
 }

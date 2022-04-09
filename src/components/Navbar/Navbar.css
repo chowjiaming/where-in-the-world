@@ -6,23 +6,23 @@
   align-items: center;
 }
 
-.nav-title {
+.navbar__title {
   cursor: pointer;
   font-size: 1em;
 }
 
-.theme-toggle-container {
+.container__theme {
   cursor: pointer;
   margin-left: auto;
   display: flex;
   gap: 0.5em;
 }
 
-.theme-icon {
+.theme__icon {
   width: 1em;
 }
 
-.theme-toggle-text {
+.theme__icon--text {
   font-weight: 600;
 }
 
@@ -30,7 +30,7 @@
   .navbar {
     padding: 2em 4em;
   }
-  .nav-title {
+  .navbar__title {
     font-size: 1.5em;
     font-weight: 800;
   }

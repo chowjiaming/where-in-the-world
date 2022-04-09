@@ -3,7 +3,7 @@ import "./Details.css"
 
 export default function Details() {
   return (
-    <section className="country-detail-container">
+    <section className="container__country--details">
       <Detail />
     </section>
   );

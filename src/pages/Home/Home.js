@@ -4,7 +4,7 @@ import "./Home.css";
 
 export default function Home() {
   return (
-    <section className="main-content-container">
+    <section className="container__content--main">
       <Search />
       <Countries />
     </section>

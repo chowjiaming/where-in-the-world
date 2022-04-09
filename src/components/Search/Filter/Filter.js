@@ -64,17 +64,17 @@ export default function Filter() {
   };
 
   return (
-    <div className="dropdown-container" ref={dropdownRef}>
+    <div className="container__dropdown" ref={dropdownRef}>
       <button
         type="button"
         aria-haspopup="listbox"
         aria-expanded={dropdownOpen}
-        className={`region-filter-dropdown ${dropdownOpen ? "expanded" : ""}`}
+        className={`button__dropdown ${dropdownOpen ? "expanded" : ""}`}
         onClick={toggleDropdownOpen}
         onKeyDown={handleListKeyDown}
       >
         <img
-          className={`chevron-down ${theme.option === "light" ? "light" : ""}`}
+          className={`button__dropdown--icon ${theme.option === "light" ? "light" : ""}`}
           src="images/chevron-down.svg"
           alt="chevron-down"
         />
@@ -82,7 +82,7 @@ export default function Filter() {
       </button>
       <ul
         title="region-select"
-        className={`dropdown-options ${dropdownOpen ? "show" : ""}`}
+        className={`dropdown__options ${dropdownOpen ? "dropdown__options--show" : ""}`}
         role="listbox"
         aria-activedescendant={regionList[countrySearchData.region]}
         tabIndex={-1}
@@ -93,7 +93,7 @@ export default function Filter() {
             <li
               key={option}
               id={option}
-              className="dropdown-option"
+              className="dropdown__option"
               role="option"
               aria-selected={countrySearchData.region === index}
               tabIndex={0}

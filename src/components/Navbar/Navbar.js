@@ -9,18 +9,18 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <h1 className="nav-title" onClick={handleHomeClick}>
+      <h1 className="navbar__title" onClick={handleHomeClick}>
         Where in the World?
       </h1>
       {theme.option === "light" ? (
-        <div className="theme-toggle-container" onClick={handleToggleClick}>
-          <img className="theme-icon" src="images/moon.svg" alt="moon-icon" />
-          <p className="theme-toggle-text">Dark Mode</p>
+        <div className="container__theme" onClick={handleToggleClick}>
+          <img className="theme__icon" src="images/moon.svg" alt="moon-icon" />
+          <p className="theme__icon--text">Dark Mode</p>
         </div>
       ) : (
-        <div className="theme-toggle-container" onClick={handleToggleClick}>
-          <img className="theme-icon" src="images/sun.svg" alt="sun-icon" />
-          <p className="theme-toggle-text">Light Mode</p>
+        <div className="container__theme" onClick={handleToggleClick}>
+          <img className="theme__icon" src="images/sun.svg" alt="sun-icon" />
+          <p className="theme__icon--text">Light Mode</p>
         </div>
       )}
     </nav>

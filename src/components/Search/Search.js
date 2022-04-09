@@ -9,17 +9,17 @@ export default function Search() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className="input-container">
-      <div className="search-container">
+    <div className="container__input">
+      <div className="container__search">
         <img
-          className={`magnifying-glass ${
+          className={`container__search--icon ${
             theme.option === "light" ? "light" : ""
           }`}
           src="images/search.svg"
-          alt="magnifying-glass"
+          alt="container__search--icon"
         />
         <input
-          className="search-box"
+          className="search__input"
           value={countrySearchData.term}
           onChange={handleSearch}
           placeholder="Search for a country..."
