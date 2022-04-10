@@ -1,0 +1,23 @@
+.footer {
+  margin-top: 6em;
+}
+
+@media (min-width: 45rem) {
+  .footer {
+    margin-top: 2em;
+  }
+}
+
+.footer__attribution {
+  font-weight: 600;
+  color: var(--font-colour);
+  text-align: center;
+  position: absolute;
+  bottom: 1rem;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.footer__attribution--link {
+  color: var(--attribution-link);
+}

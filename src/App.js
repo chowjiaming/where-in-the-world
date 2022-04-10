@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import NotFound from "./pages/NotFound/NotFound";
 import Home from "./pages/Home/Home";
 import Detail from "./pages/Details/Details";
+import Attributions from "./components/Attributions/Attributions";
 import "./App.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path={"/detail/:countryId"} element={<Detail />} />
         </Routes>
       </CountriesProvider>
+      <Attributions />
     </div>
   );
 }

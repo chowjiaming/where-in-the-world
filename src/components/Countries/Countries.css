@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2em;
+  /* align-items: flex-start; */
 }
 
 @media (min-width: 45rem) {
