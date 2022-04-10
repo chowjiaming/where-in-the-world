@@ -1,4 +1,4 @@
-.container__boders{
+.container__borders {
   display: flex;
   flex-direction: column;
 }
@@ -11,7 +11,7 @@
 }
 
 @media (min-width: 90rem) {
-  .container__boders{
+  .container__borders {
     flex-direction: row;
     gap: 2em;
     align-items: center;

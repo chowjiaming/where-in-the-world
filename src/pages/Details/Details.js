@@ -1,5 +1,5 @@
 import Detail from "../../components/Detail/Detail";
-import "./Details.css"
+import "./Details.css";
 
 export default function Details() {
   return (

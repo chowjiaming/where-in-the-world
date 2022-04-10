@@ -7,7 +7,7 @@ export default function Borders(props) {
     return <Border key={countryCode} countryCode={countryCode} />;
   });
   return (
-    <div className="borders-container">
+    <div className="container__borders">
       <h3 className="border__title">Border Countries:</h3>
       <div className="box__border">{borderContent}</div>
     </div>

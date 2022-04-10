@@ -74,7 +74,9 @@ export default function Filter() {
         onKeyDown={handleListKeyDown}
       >
         <img
-          className={`button__dropdown--icon ${theme.option === "light" ? "light" : ""}`}
+          className={`button__dropdown--icon ${
+            theme.option === "light" ? "light" : ""
+          }`}
           src="images/chevron-down.svg"
           alt="chevron-down"
         />
@@ -82,7 +84,9 @@ export default function Filter() {
       </button>
       <ul
         title="region-select"
-        className={`dropdown__options ${dropdownOpen ? "dropdown__options--show" : ""}`}
+        className={`dropdown__options ${
+          dropdownOpen ? "dropdown__options--show" : ""
+        }`}
         role="listbox"
         aria-activedescendant={regionList[countrySearchData.region]}
         tabIndex={-1}

@@ -5,12 +5,10 @@ const CountriesContext = createContext();
 
 export const CountriesProvider = ({ children }) => {
   const navigate = useNavigate();
-
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [countrySearchData, setCountrySearchData] = useState({
     term: "",
     region: 0,
-    default: "all",
   });
 
   const toggleDropdownOpen = () => {
@@ -20,7 +18,6 @@ export const CountriesProvider = ({ children }) => {
   const handleRegionSelect = (index) => {
     setCountrySearchData({
       ...countrySearchData,
-      default: "",
       region: index,
     });
     setDropdownOpen(false);
@@ -41,19 +38,10 @@ export const CountriesProvider = ({ children }) => {
 
   const handleSearch = (e) => {
     const value = e.target.value;
-    if (!value) {
-      setCountrySearchData({
-        term: value,
-        region: 0,
-        default: "all",
-      });
-    } else {
-      setCountrySearchData({
-        term: value,
-        region: 0,
-        default: "",
-      });
-    }
+    setCountrySearchData({
+      ...countrySearchData,
+      term: value,
+    });
   };
 
   const handleCountryClick = (e) => {

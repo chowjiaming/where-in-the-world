@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import CountriesContext from "../../../context/countriesContext";
-import { addCommas } from "../../../helpers/helperFunctions";
+import { numToLocale } from "../../../helpers/helperFunctions";
 import "./Country.css";
 
 export default function Country(props) {
@@ -22,7 +22,7 @@ export default function Country(props) {
         <h2 className="country__name">{country.name.common}</h2>
         <p className="country__fact">
           <span className="country__fact--heading">Population: </span>
-          {addCommas(country.population)}
+          {numToLocale(country.population)}
         </p>
         <p className="country__fact">
           <span className="country__fact--heading">Region: </span>
