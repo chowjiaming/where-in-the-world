@@ -7,14 +7,13 @@
 
 @media (min-width: 45rem) {
   .container__results {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 4em;
   }
 }
 
-@media (min-width: 110rem) {
+@media (min-width: 90rem) {
   .container__results {
-    grid-template-columns: repeat(4, 1fr);
     gap: 6em;
   }
 }
