@@ -50,6 +50,7 @@ export const CountriesProvider = ({ children }) => {
   };
 
   const handleHomeClick = () => {
+    setCountrySearchData({ term: "", region: 0 });
     navigate("/");
   };
 
