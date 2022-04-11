@@ -51,5 +51,5 @@ export default function Countries() {
     }`}</h1>
   );
 
-  return <div className="container__results">{mainContent}</div>;
+  return <section className="container__results">{mainContent}</section>;
 }

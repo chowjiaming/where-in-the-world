@@ -2,18 +2,26 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2em;
-  /* align-items: flex-start; */
+  align-items: flex-start;
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 30rem) {
   .container__results {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3em;
+  }
+}
+
+@media (min-width: 55rem) {
+  .container__results {
+    grid-template-columns: repeat(3, 1fr);
     gap: 4em;
   }
 }
 
 @media (min-width: 90rem) {
   .container__results {
-    gap: 6em;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5em;
   }
 }

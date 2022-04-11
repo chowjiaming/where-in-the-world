@@ -4,9 +4,9 @@ import "./Home.css";
 
 export default function Home() {
   return (
-    <section className="container__content--main">
+    <main className="container__content--main">
       <Search />
       <Countries />
-    </section>
+    </main>
   );
 }

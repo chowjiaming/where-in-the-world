@@ -10,7 +10,7 @@ export default function Country(props) {
   return (
     <div
       className="container__country"
-      id={country.name.common}
+      title={country.name.common}
       onClick={handleCountryClick}
     >
       <img

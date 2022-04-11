@@ -71,7 +71,9 @@ export default function Detail() {
               </p>
               <p className="detail__fact">
                 <span className="detail__fact--heading">Currencies: </span>
-                {capitalizeWords(Object.values(countries[0].currencies)[0].name)}
+                {capitalizeWords(
+                  Object.values(countries[0].currencies)[0].name
+                )}
               </p>
               <p className="detail__fact">
                 <span className="detail__fact--heading">Language: </span>
@@ -90,5 +92,5 @@ export default function Detail() {
     </Fragment>
   );
 
-  return <Fragment>{detailContent}</Fragment>;
+  return <section>{detailContent}</section>;
 }

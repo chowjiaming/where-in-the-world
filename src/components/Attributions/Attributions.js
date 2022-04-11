@@ -2,7 +2,7 @@ import "./Attributions.css";
 
 export default function Attributions() {
   return (
-    <footer className="footer">
+    <footer className="footer" role="contentinfo">
       <p className="footer__attribution">
         Challenge by{" "}
         <a

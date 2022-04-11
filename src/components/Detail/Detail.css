@@ -41,7 +41,7 @@
   font-weight: 600;
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 75rem) {
   .button__back {
     border-radius: 5px;
     padding: 0.8em 1em 0.8em 0;

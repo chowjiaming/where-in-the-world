@@ -8,7 +8,7 @@ export default function Navbar() {
   const { handleHomeClick } = useContext(CountriesContext);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation">
       <h1 className="navbar__title" onClick={handleHomeClick}>
         Where in the World?
       </h1>

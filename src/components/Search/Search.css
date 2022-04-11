@@ -37,9 +37,8 @@
 .search__input {
   border: none;
   border-radius: 5px;
-  padding: 2em;
+  padding: 2em 2em 2em 5em;
   color: var(--font-colour);
-  text-align: right;
   background-color: var(--page-element);
   width: 100%;
 }
@@ -47,7 +46,9 @@
   outline: none;
 }
 .search__input::placeholder {
-  text-align: left;
-  padding-left: 3em;
+  /* text-align: left; */
   color: var(--font-colour);
+}
+.search__input:focus::placeholder {
+  color: transparent;
 }

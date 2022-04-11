@@ -45,7 +45,7 @@ export const CountriesProvider = ({ children }) => {
   };
 
   const handleCountryClick = (e) => {
-    const country = e.currentTarget.id.toLowerCase();
+    const country = e.currentTarget.title.toLowerCase();
     navigate(`detail/${country}`);
   };
 

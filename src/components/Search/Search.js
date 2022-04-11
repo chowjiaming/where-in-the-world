@@ -10,7 +10,7 @@ export default function Search() {
 
   return (
     <div className="container__input">
-      <div className="container__search">
+      <div className="container__search" role="search">
         <img
           className={`container__search--icon ${
             theme.option === "light" ? "light" : ""
