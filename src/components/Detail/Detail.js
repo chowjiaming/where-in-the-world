@@ -76,8 +76,12 @@ export default function Detail() {
                 )}
               </p>
               <p className="detail__fact">
-                <span className="detail__fact--heading">Language: </span>
-                {Object.values(countries[0].languages)[0]}
+                <span className="detail__fact--heading">
+                  {Object.values(countries[0].languages).length > 1
+                    ? "Languages: "
+                    : "Language: "}
+                </span>
+                {Object.values(countries[0].languages).join(", ")}
               </p>
             </div>
           </div>

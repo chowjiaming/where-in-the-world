@@ -17,7 +17,7 @@ export default function Border(props) {
   ) : (
     <div
       className="button__border"
-      id={countries[0].name.common}
+      title={countries[0].name.common}
       onClick={handleCountryClick}
     >
       {countries[0].name.common}
