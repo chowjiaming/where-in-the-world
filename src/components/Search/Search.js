@@ -2,6 +2,7 @@ import { useContext } from "react";
 import CountriesContext from "../../context/countriesContext";
 import ThemeContext from "../../context/themeContext";
 import Filter from "./Filter/Filter";
+import searchIcon from "../../assets/images/search.svg"
 import "./Search.css";
 
 export default function Search() {
@@ -15,8 +16,8 @@ export default function Search() {
           className={`container__search--icon ${
             theme.option === "light" ? "light" : ""
           }`}
-          src="images/search.svg"
-          alt="container__search--icon"
+          src={searchIcon}
+          alt="search-icon"
         />
         <input
           className="search__input"

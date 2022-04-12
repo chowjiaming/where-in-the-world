@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import CountriesContext from "../../../context/countriesContext";
 import ThemeContext from "../../../context/themeContext";
 import { regionList } from "../../../config/countryRegions";
+import chevronDown from "../../../assets/images/chevron-down.svg";
 import "./Filter.css";
 
 export default function Filter() {
@@ -77,7 +78,7 @@ export default function Filter() {
           className={`button__dropdown--icon ${
             theme.option === "light" ? "light" : ""
           }`}
-          src="images/chevron-down.svg"
+          src={chevronDown}
           alt="chevron-down"
         />
         {regionList[countrySearchData.region]}

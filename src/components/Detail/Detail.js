@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { numToLocale, capitalizeWords } from "../../helpers/helperFunctions";
 import ThemeContext from "../../context/themeContext";
 import Borders from "../../components/Borders/Borders";
+import leftArrow from "../../assets/images/left-arrow.svg";
 import "./Detail.css";
 
 export default function Detail() {
@@ -26,7 +27,7 @@ export default function Detail() {
           className={`button__back--icon ${
             theme.option === "light" ? "light" : ""
           }`}
-          src="/images/left-arrow.svg"
+          src={leftArrow}
           alt="left-arrow"
         />
         Back

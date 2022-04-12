@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import ThemeContext from "../../context/themeContext";
 import CountriesContext from "../../context/countriesContext";
+import sunIcon from "../../assets/images/sun.svg";
+import moonIcon from "../../assets/images/moon.svg";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -14,12 +16,12 @@ export default function Navbar() {
       </h1>
       {theme.option === "light" ? (
         <div className="container__theme" onClick={handleToggleClick}>
-          <img className="theme__icon" src="images/moon.svg" alt="moon-icon" />
+          <img className="theme__icon" src={moonIcon} alt="moon-icon" />
           <p className="theme__icon--text">Dark Mode</p>
         </div>
       ) : (
         <div className="container__theme" onClick={handleToggleClick}>
-          <img className="theme__icon" src="images/sun.svg" alt="sun-icon" />
+          <img className="theme__icon" src={sunIcon} alt="sun-icon" />
           <p className="theme__icon--text">Light Mode</p>
         </div>
       )}
