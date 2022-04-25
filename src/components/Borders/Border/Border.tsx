@@ -1,12 +1,15 @@
-import { useContext } from "react";
-import CountriesContext from "../../../context/countriesContext";
-import useFetchCountries from "../../../hooks/useFetchCountries";
-import "./Border.css";
+import { useContext } from 'react';
+import CountriesContext from '../../../context/countriesContext';
+import useFetchCountries from '../../../hooks/useFetchCountries';
+import './Border.css';
 
-export default function Border(props) {
-  const { countryCode } = props;
+type BorderProps = {
+  countryCode: string;
+};
+
+const Border: React.FC<BorderProps> = ({ countryCode }) => {
   const { countries, isLoading, error } = useFetchCountries(
-    `alpha?codes=${countryCode}`
+    `alpha?codes=${countryCode}`,
   );
   const { handleCountryClick } = useContext(CountriesContext);
 
@@ -23,4 +26,6 @@ export default function Border(props) {
       {countries[0].name.common}
     </div>
   );
-}
+};
+
+export default Border;

@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import CountriesContext from "../../context/countriesContext";
-import ThemeContext from "../../context/themeContext";
-import Filter from "./Filter/Filter";
-import searchIcon from "../../assets/images/search.svg"
-import "./Search.css";
-
-export default function Search() {
+import { useContext } from 'react';
+import CountriesContext from '../../context/countriesContext';
+import ThemeContext from '../../context/themeContext';
+import Filter from './Filter/Filter';
+import searchIcon from '../../assets/images/search.svg';
+import './Search.css';
+const Search: React.FC = () => {
   const { countrySearchData, handleSearch } = useContext(CountriesContext);
   const { theme } = useContext(ThemeContext);
 
@@ -14,7 +13,7 @@ export default function Search() {
       <div className="container__search" role="search">
         <img
           className={`container__search--icon ${
-            theme.option === "light" ? "light" : ""
+            theme.option === 'light' ? 'light' : ''
           }`}
           src={searchIcon}
           alt="search-icon"
@@ -29,4 +28,6 @@ export default function Search() {
       <Filter />
     </div>
   );
-}
+};
+
+export default Search;

@@ -1,8 +1,11 @@
-import Border from "./Border/Border";
-import "./Borders.css";
+import Border from './Border/Border';
+import './Borders.css';
 
-export default function Borders(props) {
-  const { borders } = props;
+type BordersProps = {
+  borders: string[];
+};
+
+const Borders: React.FC<BordersProps> = ({ borders }) => {
   const borderContent = borders.map((countryCode) => {
     return <Border key={countryCode} countryCode={countryCode} />;
   });
@@ -12,4 +15,6 @@ export default function Borders(props) {
       <div className="box__border">{borderContent}</div>
     </div>
   );
-}
+};
+
+export default Borders;

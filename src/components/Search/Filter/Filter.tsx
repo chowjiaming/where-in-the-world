@@ -1,9 +1,9 @@
-import { useContext, useRef } from "react";
-import CountriesContext from "../../../context/countriesContext";
-import ThemeContext from "../../../context/themeContext";
-import { regionList } from "../../../config/countryRegions";
-import chevronDown from "../../../assets/images/chevron-down.svg";
-import "./Filter.css";
+import { useContext, useRef } from 'react';
+import CountriesContext from '../../../context/countriesContext';
+import ThemeContext from '../../../context/themeContext';
+import { regionList } from '../../../config/countryRegions';
+import chevronDown from '../../../assets/images/chevron-down.svg';
+import './Filter.css';
 
 export default function Filter() {
   const {
@@ -20,26 +20,31 @@ export default function Filter() {
   const dropdownRef = useRef(null);
   useHandleClickOutside(dropdownRef);
 
-  const handleKeyDown = (index) => (e) => {
-    switch (e.key) {
-      case " ":
-      case "SpaceBar":
-      case "Enter":
-        e.preventDefault();
-        handleRegionSelect(index);
-        break;
-      default:
-        break;
-    }
-  };
+  const handleKeyDown =
+    (index: number) => (e: React.KeyboardEvent<HTMLLIElement>) => {
+      switch (e.key) {
+        case ' ':
+        case 'SpaceBar':
+        case 'Enter':
+          e.preventDefault();
+          handleRegionSelect(index);
+          break;
+        default:
+          break;
+      }
+    };
 
-  const handleListKeyDown = (e) => {
+  const handleListKeyDown = (
+    e:
+      | React.KeyboardEvent<HTMLUListElement>
+      | React.KeyboardEvent<HTMLButtonElement>,
+  ) => {
     switch (e.key) {
-      case "Escape":
+      case 'Escape':
         e.preventDefault();
         setDropdownOpen(false);
         break;
-      case "ArrowUp":
+      case 'ArrowUp':
         e.preventDefault();
         setCountrySearchData({
           ...countrySearchData,
@@ -49,7 +54,7 @@ export default function Filter() {
               : regionList.length - 1,
         });
         break;
-      case "ArrowDown":
+      case 'ArrowDown':
         e.preventDefault();
         setCountrySearchData({
           ...countrySearchData,
@@ -70,13 +75,13 @@ export default function Filter() {
         type="button"
         aria-haspopup="listbox"
         aria-expanded={dropdownOpen}
-        className={`button__dropdown ${dropdownOpen ? "expanded" : ""}`}
+        className={`button__dropdown ${dropdownOpen ? 'expanded' : ''}`}
         onClick={toggleDropdownOpen}
         onKeyDown={handleListKeyDown}
       >
         <img
           className={`button__dropdown--icon ${
-            theme.option === "light" ? "light" : ""
+            theme.option === 'light' ? 'light' : ''
           }`}
           src={chevronDown}
           alt="chevron-down"
@@ -86,7 +91,7 @@ export default function Filter() {
       <ul
         title="region-select"
         className={`dropdown__options ${
-          dropdownOpen ? "dropdown__options--show" : ""
+          dropdownOpen ? 'dropdown__options--show' : ''
         }`}
         role="listbox"
         aria-activedescendant={regionList[countrySearchData.region]}

@@ -1,10 +1,10 @@
-import { useReducer, useEffect } from "react";
-const URL = "https://restcountries.com/v3.1/";
+import { useReducer, useEffect } from 'react';
+const URL = 'https://restcountries.com/v3.1/';
 
 const ACTIONS = {
-  MAKE_REQUEST: "make-request",
-  GET_DATA: "get-data",
-  ERROR: "error",
+  MAKE_REQUEST: 'make-request',
+  GET_DATA: 'get-data',
+  ERROR: 'error',
 };
 
 function reducer(state, action) {

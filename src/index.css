@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
 :root {
   box-sizing: border-box;
@@ -12,7 +12,7 @@
   box-sizing: inherit;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --page-element: hsl(209, 23%, 22%);
   --page-element-shadow: #1a232c;
   --main-background: hsl(207, 26%, 17%);
@@ -20,7 +20,7 @@
   --attribution-link: #0e86d4;
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
   --page-element: hsl(0, 0%, 100%);
   --page-element-shadow: #d3d3d3;
   --main-background: hsl(0, 0%, 98%);

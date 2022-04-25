@@ -1,10 +1,23 @@
-import { useContext } from "react";
-import CountriesContext from "../../../context/countriesContext";
-import { numToLocale } from "../../../helpers/helperFunctions";
-import "./Country.css";
+import { useContext } from 'react';
+import CountriesContext from '../../../context/countriesContext';
+import { numToLocale } from '../../../helpers/helperFunctions';
+import './Country.css';
 
-export default function Country(props) {
-  const { country } = props;
+type CountryProps = {
+  country: {
+    name: {
+      common: string;
+    };
+    flags: {
+      svg: string;
+    };
+    population: string;
+    region: string;
+    capital: string;
+  };
+};
+
+const Country: React.FC<CountryProps> = ({ country }) => {
   const { handleCountryClick } = useContext(CountriesContext);
 
   return (
@@ -35,4 +48,6 @@ export default function Country(props) {
       </div>
     </div>
   );
-}
+};
+
+export default Country;

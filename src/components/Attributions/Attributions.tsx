@@ -1,10 +1,10 @@
-import "./Attributions.css";
+import './Attributions.css';
 
-export default function Attributions() {
+const Attributions: React.FC = () => {
   return (
     <footer className="footer" role="contentinfo">
       <p className="footer__attribution">
-        Challenge by{" "}
+        Inspired by{' '}
         <a
           className="footer__attribution--link"
           href="https://www.frontendmentor.io?ref=challenge"
@@ -13,7 +13,7 @@ export default function Attributions() {
         >
           Frontend Mentor
         </a>
-        . Coded by{" "}
+        . Coded by{' '}
         <a
           className="footer__attribution--link"
           href="https://github.com/chowjiaming"
@@ -24,4 +24,6 @@ export default function Attributions() {
       </p>
     </footer>
   );
-}
+};
+
+export default Attributions;

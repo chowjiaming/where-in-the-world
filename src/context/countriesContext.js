@@ -1,5 +1,5 @@
-import { createContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { createContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CountriesContext = createContext();
 
@@ -7,7 +7,7 @@ export const CountriesProvider = ({ children }) => {
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [countrySearchData, setCountrySearchData] = useState({
-    term: "",
+    term: '',
     region: 0,
   });
 
@@ -29,9 +29,9 @@ export const CountriesProvider = ({ children }) => {
         if (ref.current && !ref.current.contains(e.target))
           setDropdownOpen(false);
       };
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
       return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener('mousedown', handleClickOutside);
       };
     }, [ref]);
   };
@@ -50,8 +50,8 @@ export const CountriesProvider = ({ children }) => {
   };
 
   const handleHomeClick = () => {
-    setCountrySearchData({ term: "", region: 0 });
-    navigate("/");
+    setCountrySearchData({ term: '', region: 0 });
+    navigate('/');
   };
 
   return (

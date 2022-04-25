@@ -1,11 +1,11 @@
-import { useContext } from "react";
-import ThemeContext from "../../context/themeContext";
-import CountriesContext from "../../context/countriesContext";
-import sunIcon from "../../assets/images/sun.svg";
-import moonIcon from "../../assets/images/moon.svg";
-import "./Navbar.css";
+import { useContext } from 'react';
+import ThemeContext from '../../context/themeContext';
+import CountriesContext from '../../context/countriesContext';
+import sunIcon from '../../assets/images/sun.svg';
+import moonIcon from '../../assets/images/moon.svg';
+import './Navbar.css';
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
   const { handleToggleClick, theme } = useContext(ThemeContext);
   const { handleHomeClick } = useContext(CountriesContext);
 
@@ -14,7 +14,7 @@ export default function Navbar() {
       <h1 className="navbar__title" onClick={handleHomeClick}>
         Where in the World?
       </h1>
-      {theme.option === "light" ? (
+      {theme.option === 'light' ? (
         <div className="container__theme" onClick={handleToggleClick}>
           <img className="theme__icon" src={moonIcon} alt="moon-icon" />
           <p className="theme__icon--text">Dark Mode</p>
@@ -27,4 +27,6 @@ export default function Navbar() {
       )}
     </nav>
   );
-}
+};
+
+export default Navbar;

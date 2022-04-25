@@ -1,20 +1,28 @@
-import { Fragment, useContext } from "react";
-import useFetchCountries from "../../hooks/useFetchCountries";
-import { useParams, useNavigate } from "react-router-dom";
-import { numToLocale, capitalizeWords } from "../../helpers/helperFunctions";
-import ThemeContext from "../../context/themeContext";
-import Borders from "../../components/Borders/Borders";
-import leftArrow from "../../assets/images/left-arrow.svg";
-import "./Detail.css";
+import { Fragment, useContext } from 'react';
+import useFetchCountries from '../../hooks/useFetchCountries';
+import { useParams, useNavigate } from 'react-router-dom';
+import {
+  numToLocale,
+  capitalizeWords,
+  findNativeName,
+  findCurrency,
+} from '../../helpers/helperFunctions';
+import ThemeContext from '../../context/themeContext';
+import Borders from '../Borders/Borders';
+import leftArrow from '../../assets/images/left-arrow.svg';
+import './Detail.css';
 
-export default function Detail() {
+const Detail: React.FC = () => {
   const { theme } = useContext(ThemeContext);
   const params = useParams();
   const navigate = useNavigate();
   const { countryId } = params;
+
+  // temporary until new reducer hook function is written
   const { countries, isLoading, error } = useFetchCountries(
-    `name/${countryId}`
+    `name/${countryId}`,
   );
+  const country = countries ? countries[0] : null;
 
   const detailContent = error ? (
     <h1>{error}</h1>
@@ -25,7 +33,7 @@ export default function Detail() {
       <button className="button__back" onClick={() => navigate(-1)}>
         <img
           className={`button__back--icon ${
-            theme.option === "light" ? "light" : ""
+            theme.option === 'light' ? 'light' : ''
           }`}
           src={leftArrow}
           alt="left-arrow"
@@ -35,60 +43,58 @@ export default function Detail() {
       <div className="container__detail--main">
         <img
           className="large-country__flag"
-          src={countries[0].flags.svg}
-          alt={`${countries[0].name.common} Flag`}
+          src={country.flags.svg}
+          alt={`${country.name.common} Flag`}
         />
         <div className="container__detail--inner">
-          <h2 className="detail__country--title">{countries[0].name.common}</h2>
+          <h2 className="detail__country--title">{country.name.common}</h2>
           <div className="details__content">
             <div className="container__facts">
               <p className="detail__fact">
                 <span className="detail__fact--heading">Native Name: </span>
-                {Object.values(countries[0].name.nativeName)[0].official}
+                {findNativeName(country.name.nativeName)}
               </p>
               <p className="detail__fact">
                 <span className="detail__fact--heading">Population: </span>
-                {numToLocale(countries[0].population)}
+                {numToLocale(country.population)}
               </p>
               <p className="detail__fact">
                 <span className="detail__fact--heading">Region: </span>
-                {countries[0].region}
+                {country.region}
               </p>
               <p className="detail__fact">
                 <span className="detail__fact--heading">Sub Region: </span>
-                {countries[0].subregion}
+                {country.subregion}
               </p>
               <p className="detail__fact">
                 <span className="detail__fact--heading">Capital: </span>
-                {countries[0].capital}
+                {country.capital}
               </p>
             </div>
             <div className="container__facts">
               <p className="detail__fact">
                 <span className="detail__fact--heading">
-                  Top Level Domain:{" "}
+                  Top Level Domain:{' '}
                 </span>
-                {countries[0].tld[0]}
+                {country.tld[0]}
               </p>
               <p className="detail__fact">
                 <span className="detail__fact--heading">Currencies: </span>
-                {capitalizeWords(
-                  Object.values(countries[0].currencies)[0].name
-                )}
+                {capitalizeWords(findCurrency(country.currencies))}
               </p>
               <p className="detail__fact">
                 <span className="detail__fact--heading">
-                  {Object.values(countries[0].languages).length > 1
-                    ? "Languages: "
-                    : "Language: "}
+                  {Object.values(country.languages).length > 1
+                    ? 'Languages: '
+                    : 'Language: '}
                 </span>
-                {Object.values(countries[0].languages).join(", ")}
+                {Object.values(country.languages).join(', ')}
               </p>
             </div>
           </div>
 
-          {countries[0].borders ? (
-            <Borders borders={countries[0].borders} />
+          {country.borders ? (
+            <Borders borders={country.borders} />
           ) : (
             <h3 className="border__title">No bordering Countries</h3>
           )}
@@ -97,5 +103,7 @@ export default function Detail() {
     </Fragment>
   );
 
-  return <section>{detailContent}</section>;
-}
+  return <section className="detail">{detailContent}</section>;
+};
+
+export default Detail;

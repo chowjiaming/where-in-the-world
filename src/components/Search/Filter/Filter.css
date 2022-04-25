@@ -68,7 +68,7 @@
 .dropdown__option:hover {
   background-color: #696969;
 }
-.dropdown__option[aria-selected="true"] {
+.dropdown__option[aria-selected='true'] {
   background: var(--page-element-shadow);
   cursor: pointer;
 }

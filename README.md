@@ -53,7 +53,7 @@ Users should be able to:
 
 ### What I learned
 
-This was the first time I used the useRef hook in a project. In the Filter component, when the user selects a filter option I pass false to setDropdownOpen, but the filter would not recognize an outside click to close the dropdown. I researched and created a custom hook that compared the current ref to the target the user is currently clicking. It sets setDropdownOpen to false when it registered that the current user target is outside of the Filter component ref. 
+This was the first time I used the useRef hook in a project. In the Filter component, when the user selects a filter option I pass false to setDropdownOpen, but the filter would not recognize an outside click to close the dropdown. I researched and created a custom hook that compared the current ref to the target the user is currently clicking. It sets setDropdownOpen to false when it registered that the current user target is outside of the Filter component ref.
 
 ```js
 const useHandleClickOutside = (ref) => {
@@ -62,9 +62,9 @@ const useHandleClickOutside = (ref) => {
       if (ref.current && !ref.current.contains(e.target))
         setDropdownOpen(false);
     };
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [ref]);
 };
