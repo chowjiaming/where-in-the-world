@@ -1,4 +1,5 @@
-import { Fragment, useContext } from 'react';
+import { Fragment } from 'react';
+import useDarkMode from '../../hooks/useDarkMode';
 import useFetchCountries from '../../hooks/useFetchCountries';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
@@ -7,34 +8,30 @@ import {
   findNativeName,
   findCurrency,
 } from '../../helpers/helperFunctions';
-import ThemeContext from '../../context/themeContext';
 import Borders from '../Borders/Borders';
 import leftArrow from '../../assets/images/left-arrow.svg';
 import './Detail.css';
 
 const Detail: React.FC = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useDarkMode();
   const params = useParams();
   const navigate = useNavigate();
   const { countryId } = params;
 
-  // temporary until new reducer hook function is written
   const { countries, isLoading, error } = useFetchCountries(
     `name/${countryId}`,
   );
   const country = countries ? countries[0] : null;
 
   const detailContent = error ? (
-    <h1>{error}</h1>
+    <h1>Sorry, currently experiencing technical difficulties :(</h1>
   ) : isLoading ? (
     <h1>Loading...</h1>
   ) : (
     <Fragment>
       <button className="button__back" onClick={() => navigate(-1)}>
         <img
-          className={`button__back--icon ${
-            theme.option === 'light' ? 'light' : ''
-          }`}
+          className={`button__back--icon ${theme === 'light' ? 'light' : ''}`}
           src={leftArrow}
           alt="left-arrow"
         />

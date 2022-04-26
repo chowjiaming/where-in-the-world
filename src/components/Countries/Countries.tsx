@@ -6,7 +6,7 @@ import { capitalizeWords } from '../../helpers/helperFunctions';
 import Country from './Country/Country';
 import './Countries.css';
 
-interface Country {
+interface ICountry {
   name: {
     common: string;
   };
@@ -23,10 +23,10 @@ export default function Countries() {
   const { countries, isLoading, error } = useFetchCountries('all');
 
   const filterResults = (
-    countries: Array<Country>,
+    countries: Array<ICountry>,
     region: number,
     term: string,
-  ): Array<Country> => {
+  ): Array<ICountry> => {
     if (region && !term)
       return countries.filter(
         (country) => country.region === regionList[region],
@@ -45,7 +45,7 @@ export default function Countries() {
   };
 
   const mainContent: React.ReactNode = error ? (
-    <h1>{error.message}</h1>
+    <h1>Sorry, currently experiencing technical difficulties :(</h1>
   ) : isLoading ? (
     <h1>Loading...</h1>
   ) : filterResults(countries, countrySearchData.region, countrySearchData.term)

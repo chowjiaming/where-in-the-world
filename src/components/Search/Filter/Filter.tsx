@@ -1,6 +1,6 @@
 import { useContext, useRef } from 'react';
 import CountriesContext from '../../../context/countriesContext';
-import ThemeContext from '../../../context/themeContext';
+import useDarkMode from '../../../hooks/useDarkMode';
 import { regionList } from '../../../config/countryRegions';
 import chevronDown from '../../../assets/images/chevron-down.svg';
 import './Filter.css';
@@ -15,7 +15,7 @@ export default function Filter() {
     setCountrySearchData,
     useHandleClickOutside,
   } = useContext(CountriesContext);
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useDarkMode();
 
   const dropdownRef = useRef(null);
   useHandleClickOutside(dropdownRef);
@@ -81,7 +81,7 @@ export default function Filter() {
       >
         <img
           className={`button__dropdown--icon ${
-            theme.option === 'light' ? 'light' : ''
+            theme === 'light' ? 'light' : ''
           }`}
           src={chevronDown}
           alt="chevron-down"

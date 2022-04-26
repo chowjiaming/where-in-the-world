@@ -1,7 +1,6 @@
-import { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { CountriesProvider } from './context/countriesContext';
-import ThemeContext from './context/themeContext';
+import useDarkMode from './hooks/useDarkMode';
 import Navbar from './components/Navbar/Navbar';
 import NotFound from './pages/NotFound/NotFound';
 import Home from './pages/Home/Home';
@@ -10,9 +9,9 @@ import Attributions from './components/Attributions/Attributions';
 import './App.css';
 
 const App: React.FC = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useDarkMode();
   return (
-    <div className="App" data-theme={theme.option}>
+    <div className="App" data-theme={theme}>
       <CountriesProvider>
         <Navbar />
         <Routes>
