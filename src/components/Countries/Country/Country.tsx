@@ -1,5 +1,6 @@
 import { useContext } from 'react';
-import CountriesContext from '../../../context/countriesContext';
+import SearchContext from '../../../context/searchContext';
+import { SearchContextType } from '../../../@types/search';
 import { numToLocale } from '../../../helpers/helperFunctions';
 import './Country.css';
 
@@ -18,7 +19,7 @@ type CountryProps = {
 };
 
 const Country: React.FC<CountryProps> = ({ country }) => {
-  const { handleCountryClick } = useContext(CountriesContext);
+  const { handleCountryClick } = useContext(SearchContext) as SearchContextType;
 
   return (
     <div

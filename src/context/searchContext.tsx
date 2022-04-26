@@ -1,12 +1,17 @@
-import { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
+import { ISearchData, SearchContextType } from '../@types/search';
 import { useNavigate } from 'react-router-dom';
 
-const CountriesContext = createContext();
+const SearchContext = createContext<SearchContextType | null>(null);
 
-export const CountriesProvider = ({ children }) => {
+type SearchContextProviderProps = {
+  children: React.ReactNode;
+};
+
+export const SearchProvider = ({ children }: SearchContextProviderProps) => {
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [countrySearchData, setCountrySearchData] = useState({
+  const [countrySearchData, setCountrySearchData] = useState<ISearchData>({
     term: '',
     region: 0,
   });
@@ -15,7 +20,7 @@ export const CountriesProvider = ({ children }) => {
     setDropdownOpen(!dropdownOpen);
   };
 
-  const handleRegionSelect = (index) => {
+  const handleRegionSelect = (index: number) => {
     setCountrySearchData({
       ...countrySearchData,
       region: index,
@@ -23,10 +28,10 @@ export const CountriesProvider = ({ children }) => {
     setDropdownOpen(false);
   };
 
-  const useHandleClickOutside = (ref) => {
+  const useHandleClickOutside = (ref: React.RefObject<HTMLDivElement>) => {
     useEffect(() => {
-      const handleClickOutside = (e) => {
-        if (ref.current && !ref.current.contains(e.target))
+      const handleClickOutside = (e: MouseEvent): void => {
+        if (ref.current && !ref.current.contains(e.target as HTMLElement))
           setDropdownOpen(false);
       };
       document.addEventListener('mousedown', handleClickOutside);
@@ -36,7 +41,7 @@ export const CountriesProvider = ({ children }) => {
     }, [ref]);
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setCountrySearchData({
       ...countrySearchData,
@@ -44,7 +49,7 @@ export const CountriesProvider = ({ children }) => {
     });
   };
 
-  const handleCountryClick = (e) => {
+  const handleCountryClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const country = e.currentTarget.title.toLowerCase();
     navigate(`detail/${country}`);
   };
@@ -55,14 +60,13 @@ export const CountriesProvider = ({ children }) => {
   };
 
   return (
-    <CountriesContext.Provider
+    <SearchContext.Provider
       value={{
         dropdownOpen,
-        setDropdownOpen,
         toggleDropdownOpen,
         handleRegionSelect,
-        setCountrySearchData,
         countrySearchData,
+        setCountrySearchData,
         handleSearch,
         handleCountryClick,
         handleHomeClick,
@@ -70,8 +74,8 @@ export const CountriesProvider = ({ children }) => {
       }}
     >
       {children}
-    </CountriesContext.Provider>
+    </SearchContext.Provider>
   );
 };
 
-export default CountriesContext;
+export default SearchContext;

@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { CountriesProvider } from './context/countriesContext';
+import { SearchProvider } from './context/searchContext';
 import useDarkMode from './hooks/useDarkMode';
 import Navbar from './components/Navbar/Navbar';
 import NotFound from './pages/NotFound/NotFound';
@@ -12,14 +12,14 @@ const App: React.FC = () => {
   const { theme } = useDarkMode();
   return (
     <div className="App" data-theme={theme}>
-      <CountriesProvider>
+      <SearchProvider>
         <Navbar />
         <Routes>
           <Route path={'*'} element={<NotFound />} />
           <Route path={'/'} element={<Home />} />
           <Route path={'/detail/:countryId'} element={<Detail />} />
         </Routes>
-      </CountriesProvider>
+      </SearchProvider>
       <Attributions />
     </div>
   );

@@ -1,5 +1,6 @@
 import { useContext } from 'react';
-import CountriesContext from '../../../context/countriesContext';
+import SearchContext from '../../../context/searchContext';
+import { SearchContextType } from '../../../@types/search';
 import useFetchCountries from '../../../hooks/useFetchCountries';
 import './Border.css';
 
@@ -11,7 +12,7 @@ const Border: React.FC<BorderProps> = ({ countryCode }) => {
   const { countries, isLoading, error } = useFetchCountries(
     `alpha?codes=${countryCode}`,
   );
-  const { handleCountryClick } = useContext(CountriesContext);
+  const { handleCountryClick } = useContext(SearchContext) as SearchContextType;
 
   return error ? (
     <div className="button__border">{error}</div>

@@ -1,5 +1,6 @@
 import { useContext, useRef } from 'react';
-import CountriesContext from '../../../context/countriesContext';
+import SearchContext from '../../../context/searchContext';
+import { SearchContextType } from '../../../@types/search';
 import useDarkMode from '../../../hooks/useDarkMode';
 import { regionList } from '../../../config/countryRegions';
 import chevronDown from '../../../assets/images/chevron-down.svg';
@@ -8,16 +9,15 @@ import './Filter.css';
 export default function Filter() {
   const {
     dropdownOpen,
-    setDropdownOpen,
     toggleDropdownOpen,
     handleRegionSelect,
     countrySearchData,
     setCountrySearchData,
     useHandleClickOutside,
-  } = useContext(CountriesContext);
+  } = useContext(SearchContext) as SearchContextType;
   const { theme } = useDarkMode();
 
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   useHandleClickOutside(dropdownRef);
 
   const handleKeyDown =
@@ -42,7 +42,7 @@ export default function Filter() {
     switch (e.key) {
       case 'Escape':
         e.preventDefault();
-        setDropdownOpen(false);
+        toggleDropdownOpen();
         break;
       case 'ArrowUp':
         e.preventDefault();

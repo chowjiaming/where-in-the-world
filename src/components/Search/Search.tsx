@@ -1,12 +1,15 @@
 import { useContext } from 'react';
-import CountriesContext from '../../context/countriesContext';
+import SearchContext from '../../context/searchContext';
+import { SearchContextType } from '../../@types/search';
 import useDarkMode from '../../hooks/useDarkMode';
 import Filter from './Filter/Filter';
 import searchIcon from '../../assets/images/search.svg';
 import './Search.css';
 
 const Search: React.FC = () => {
-  const { countrySearchData, handleSearch } = useContext(CountriesContext);
+  const { countrySearchData, handleSearch } = useContext(
+    SearchContext,
+  ) as SearchContextType;
   const { theme } = useDarkMode();
 
   return (

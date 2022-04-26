@@ -1,5 +1,6 @@
 import { useContext } from 'react';
-import CountriesContext from '../../context/countriesContext';
+import SearchContext from '../../context/searchContext';
+import { SearchContextType } from '../../@types/search';
 import useFetchCountries from '../../hooks/useFetchCountries';
 import { regionList } from '../../config/countryRegions';
 import { capitalizeWords } from '../../helpers/helperFunctions';
@@ -19,7 +20,7 @@ interface ICountry {
 }
 
 export default function Countries() {
-  const { countrySearchData } = useContext(CountriesContext);
+  const { countrySearchData } = useContext(SearchContext) as SearchContextType;
   const { countries, isLoading, error } = useFetchCountries('all');
 
   const filterResults = (
